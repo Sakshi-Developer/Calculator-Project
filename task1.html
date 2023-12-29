@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculator</title>
+	<!-- <link rel="stylesheet" href="task1.css"> -->
+
+</head>
+<style>
+	*{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	/* background-color: aqua; */
+	background-color: rgb(224, 143, 215);
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.backbox{
+	margin-top: 50px;
+	width: 400px;
+	height: 600px;
+	border: 2px solid hsl(221, 88%, 47%);
+	background-color: rgb(4, 4, 54);
+	border-radius: 10px;
+}
+.structure{
+	margin-top: 10px;
+	margin-left: 15px;
+	font-size: 30px;
+	color: greenyellow;
+	/* background-color:rgb(4, 4, 58);
+	padding: 20px;
+	border-radius: 10px; */
+}
+.screen{
+    margin-left: 1px;
+	margin-top: 10px;
+	color: yellow;
+	font-size: x-large;
+	background-color:rgb(4, 4, 58);
+	box-shadow: -8px -8px 15px rgba(255,255,255,0.1),5px 5px 15px rgba(0, 0, 0, 0.2) ;
+	padding: 20px;
+	border-radius: 10px;
+	width: 330px;
+	border: 0;
+	height: 60px;
+}
+button{
+	border: 0;
+	outline: 0;
+	width: 60px;
+	height: 60px;
+	border-radius: 10px;
+	box-shadow: -8px -8px 15px rgba(255,255,255,0.1) ;
+	font-size: 20px;
+	background-color: rgb(4, 4, 58) ;
+	color: rgb(15, 237, 212);
+	cursor: pointer;
+	margin: 10px;
+	padding: 10px;
+	margin-left: 15px;
+	
+}
+.equal{
+	position: absolute;
+	height: 150px;
+}
+
+@media screen and (max-width:991px) {
+	
+}
+audio{
+	display: none;
+}
+</style>
+
+<body>
+	<div class="container">
+	<div class="backbox">
+		<div class="structure"><div class="logo">Calculator</div>
+		<input type="text" name="box" class="screen" id="header">
+
+		<div class="buttons">
+			
+			<button onclick="cls()"><span style="color: red;">AC</span></button>
+			<button onclick="del()"><span style="color: red;">C</span></button>
+			<button onclick="divi()"><span style="color: red;">/</span></button>
+			<button  onclick="multi()"><span style="color: red;">x</span></button>
+				</div>
+
+		<div class="buttons">
+			<button onclick="seven()">7</button>
+			<button onclick="eight()">8</button>
+			 <button onclick="nine()">9</button>
+			<button onclick="minus()"><span style="color: red;">-</span></button>
+		</div>
+
+		<div class="buttons">
+			<button onclick="four()">4</button>
+			<button onclick="five()">5</button>
+			<button onclick="six()">6</button>
+			<button onclick="add()"><span span style="color: red;">+</span></button>
+		</div>
+
+		<div class="buttons">
+			<button onclick="one()">1</button>
+			<button onclick="two()">2</button>
+			<button onclick="three()">3</button>
+			<button onclick="result()"class="equal"><span style="color: rgb(236, 22, 22);">=</span></button>
+		</div>
+
+		<div class="buttons">
+			<button onclick="double()">00</button>
+			<button onclick="zero()">0</button>
+			<button onclick="point()">.</button>
+		</div>
+
+
+		</div>
+       <audio src="click.wav" controls type="audio/wav"></audio>
+	</div>
+</div>
+
+</body>
+<script>
+	var screen= document.getElementById('header');
+
+function nine(){
+	screen.value += 9
+}
+
+function eight(){
+	screen.value+= 8
+}
+
+function seven(){
+	screen.value+= 7
+}
+
+function six(){
+	screen.value+= 6
+}
+
+function five(){
+	screen.value+='5'
+}
+
+function four(){
+	screen.value+= 4
+}
+
+function three(){
+	screen.value+= 3
+}
+
+function two(){
+	screen.value+= 2
+}
+
+function one(){
+	screen.value+= 1
+}
+
+function zero(){
+	screen.value+= 0
+}
+
+function add(){
+	screen.value+= '+'
+}
+
+function minus(){
+	screen.value+='-'
+}
+
+function result(){
+	screen.value =eval(screen.value)
+}
+
+function cls(){
+	screen.value = ' '
+}
+
+function del(){
+	screen.value= screen.value.slice(0,-1);
+}
+
+function divi(){
+	screen.value+='/'
+}
+
+function multi(){
+	screen.value+='*'
+}
+
+function point(){
+	screen.value+='.'
+}
+
+function double(){
+	screen.value+='00'
+}
+
+
+</script>
+</html>
